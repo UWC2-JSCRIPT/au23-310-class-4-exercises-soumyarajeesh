@@ -1,51 +1,32 @@
-/**
- * Returns an array of 52 Cards
- * @returns {Array} deck - a deck of cards
- */
-const getDeck = () => {
-  const deck = []
-  const suits = ['hearts', 'spades', 'clubs', 'diamonds']
 
-  for (let index = 0; index < suits.length; index++) {
-    // create an array of 13 objects
-    for (let j = 1; j <= 13; j++) {
-      // for each loop, push a card object to the deck
+ // Returns an array of 52 Cards
+ // @returns {Array} deck - a deck of cards
+ 
 
-      // special cases for when j > 10
-      const displayVal = ''
-
-      switch (j) {
-        case j === 1:
-          displayVal = 'Ace'
-          break
-        case j > 1 && j <= 10:
-          displayVal = j
-          break
-        case j === 11:
-          displayVal = 'Jack'
-          break
-        case j === 12:
-          displayVal = 'Queen'
-          break
-        case j === 13:
-          displayVal = 'King'
-          break
+  function getDeck() {
+    const suits = ['hearts', 'spades', 'clubs', 'diamonds'];
+    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
+    const deck = [];
+  
+    for (const suit of suits) {
+      for (const value of values) {
+        let card = {
+          suit: suit,
+          displayVal: value,
+          val: (value === 'Jack' || value === 'Queen' || value === 'King') ? 10 : (value === 'Ace' ? 11 : parseInt(value))
+        };
+        deck.push(card);
       }
-
-      const card = {
-        val: j,
-        displayVal: displayVal,
-        suit: suits[index],
-      }
-
-      if (displayVal === 'Ace') {
-        card.val = 11
-      }
-
-      deck.push(card)
     }
+  
+    return deck;
   }
-}
+  
+  const deckOfCards = getDeck();
+  console.log(deckOfCards);
+  
+  
+
 
 // CHECKS
 const deck = getDeck()
