@@ -1,18 +1,15 @@
+
 // Create a function to getdeck 
 function getDeck() {
     const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-    //const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
     const vals = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
     const deck = [];
   
     for (const suit of suits) {
-      //for (const rank of ranks) {
         for (const val of vals) {
-      //  deck.push(`${rank} of ${suit}`);
           deck.push(`${val} of ${suit}`);
       }
     }
-  
     return shuffleDeck(deck);
   }
   
@@ -43,18 +40,14 @@ function getDeck() {
       let numAces = 0;
   
       for (const card of this.hand) {
-        //const rank = card.split(' ')[0];
         const val = card.split(' ')[0];
   
-        //if (rank === 'Ace') {
         if (val === 'Ace') {  
           numAces++;
           points += 11;
-        //} else if (['King', 'Queen', 'Jack'].includes(rank)) {
         } else if (['King', 'Queen', 'Jack'].includes(val)) {
           points += 10;
         } else {
-        //  points += parseInt(rank);
         points += parseInt(val);
         }
       }
@@ -95,7 +88,6 @@ function getDeck() {
    const deck = getDeck();
    
   // Deal two initial cards to the player and dealer
-  
   
   player.addCard(deck.pop());
   dealer.addCard(deck.pop());
