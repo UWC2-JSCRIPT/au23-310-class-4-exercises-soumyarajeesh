@@ -10,7 +10,8 @@ function getDeck() {
           deck.push(`${val} of ${suit}`);
       }
     }
-    return shuffleDeck(deck);
+   return shuffleDeck(deck);
+  
   }
   
   // Create function to shuffle a deck of cards
@@ -19,7 +20,7 @@ function getDeck() {
       const j = Math.floor(Math.random() * (i + 1));
       [deck[i], deck[j]] = [deck[j], deck[i]];
     }
-    return deck;
+    return deck; 
   }
   
   // Define the CardPlayer class
@@ -93,7 +94,7 @@ function getDeck() {
   dealer.addCard(deck.pop());
   player.addCard(deck.pop());
   dealer.addCard(deck.pop());
-  
+
   console.log(`Player's Hand: ${player.hand}`);
   console.log(`Dealer's Hand: ${dealer.hand}`);
   console.log(`Player's Points: ${player.calcPoints()}`);
@@ -104,7 +105,6 @@ function getDeck() {
     dealer.addCard(deck.pop());
   }
 
-  
   console.log('--- After Dealer Draws ---');
   console.log(`Player's Hand: ${player.hand}`);
   console.log(`Dealer's Hand: ${dealer.hand}`);
@@ -114,7 +114,6 @@ function getDeck() {
   const winner = determineWinner(player.calcPoints(), dealer.calcPoints());
   console.log(`The winner is: ${winner}`);
   
-
 //===============================================================================================================//
 // /**
 //  * Creates user prompt to ask if they'd like to draw a card
@@ -168,4 +167,4 @@ function getDeck() {
 
  //  return determineWinner(playerScore, dealerScore);
  //}
- //console.log(startGame());
+ console.log(startGame());
