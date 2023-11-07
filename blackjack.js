@@ -167,4 +167,4 @@ function getDeck() {
 
  //  return determineWinner(playerScore, dealerScore);
  //}
- console.log(startGame());
+ //console.log(startGame());
