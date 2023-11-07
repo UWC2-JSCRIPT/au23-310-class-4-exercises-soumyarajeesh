@@ -5,11 +5,11 @@
 
   function getDeck() {
     const suits = ['hearts', 'spades', 'clubs', 'diamonds'];
-    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
+    const val = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
     const deck = [];
   
     for (const suit of suits) {
-      for (const value of values) {
+      for (const value of val) {
         let card = {
           suit: suit,
           displayVal: value,
