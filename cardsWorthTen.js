@@ -1,4 +1,4 @@
-const cards = [
+const deckOfCards = [
   { val: 2, displayVal: "2", suit: "hearts" },
   { val: 3, displayVal: "3", suit: "hearts" },
   { val: 4, displayVal: "4", suit: "hearts" },
@@ -18,10 +18,20 @@ const cards = [
  * Takes an array of cards and returns a string of the card display
  * values where the value is equal to 10
  *
- * @param {array} cards
- * @return {string} displayVal
+ //@param {array} cards
+ // @return {string} displayVal
  */
-const cardsWorthTen = cards => {};
+function cardsWorthTen(cards) {
+  const worthTenCards = cards
+    .filter(card => card.val === 10)
+    .map(card => card.displayVal);
 
-console.log(cardsWorthTen(cards));
-// should return/log "10, Jack, Queen, King"
+  return worthTenCards.join(', ');
+}
+
+const tenValueCards = cardsWorthTen(deckOfCards);
+console.log(tenValueCards); 
+
+// Output: "10, Jack, Queen, King"
+
+
