@@ -1,4 +1,4 @@
-const cards = [
+const deckOfCards = [
   { val: 2, displayVal: '2', suit: 'hearts' },
   { val: 3, displayVal: '3', suit: 'hearts' },
   { val: 4, displayVal: '4', suit: 'hearts' },
@@ -52,10 +52,18 @@ const cards = [
   { val: 10, displayVal: 'King', suit: 'spades' },
   { val: 11, displayVal: 'Ace', suit: 'spades' }
 ];
+ 
+function logAllCardProperties(deck) {
+  deck.forEach((card, index) => {
+    console.log(`Card ${index + 1} Properties:`);
+    Object.keys(card).forEach(property => {
+      console.log(`${property}: ${card[property]}`);
+    });
+    console.log('-------------------------');
+  });
+}
 
-/**
- * Logs every property of every card to the console
- *
- * @param {array} deck A deck of cards
- */
-const logCardDeck = deck => {};
+// Logs every property of every card to the console
+
+logAllCardProperties(deckOfCards);
+
